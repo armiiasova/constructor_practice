@@ -32,7 +32,7 @@ const aida = new Student('Aida', 'Aitenova', 'aida@gmail.com');
 console.log(adilet);
 console.log(aida);
 const APIUrl =
-	'https://crudcrud.com/api/6504deb75f134fd9878f83290f625706/students';
+	'https://crudcrud.com/api/8b18c355a7894f45b6e87b7b234c31c4/students';
 // Get all students.
 const getStudents = async () => {
 	const studentsListDiv = document.getElementById('students-list');
@@ -48,21 +48,26 @@ const createStudentForm = document.getElementById('create-user');
 createStudentForm.addEventListener('submit', async (event) => {
 	event.preventDefault();
 	const inputValues = {};
-    const formInputs = Array.from(event.target.elements);
-    formInputs
-        .filter(element => element.name) // []
-        .forEach(element => { // input that has name and value.
-            inputValues[element.name] = element.value;
-        });
-        console.log(inputValues);
-    const student = new Student(inputValues.name, inputValues.lastName, inputValues.email);
+	const formInputs = Array.from(event.target.elements);
+	formInputs
+		.filter((element) => element.name) // []
+		.forEach((element) => {
+			// input that has name and value.
+			inputValues[element.name] = element.value;
+		});
+	console.log(inputValues);
+	const student = new Student(
+		inputValues.name,
+		inputValues.lastName,
+		inputValues.email
+	);
 
 	const options = {
-		method: "POST",
+		method: 'POST',
 		headers: {
-			"Content-Type": "application/json",
+			'Content-Type': 'application/json; charset=utf-8',
 		},
-		body: JSON.stringify(student)
+		body: JSON.stringify(student),
 	};
 	const postPromise = fetch(APIUrl, options);
 	const result = await postPromise.then((res) => res.json());
