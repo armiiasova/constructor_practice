@@ -11,7 +11,7 @@ function createPerson() {
 const person = createPerson();
 console.log(person);
 // constructor functions
-
+//OOP.
 function Student(name, lastName, email) {
 	this.name = name;
 	this.lastName = lastName;
@@ -27,10 +27,8 @@ function Student(name, lastName, email) {
 	this.githubUrl = '';
 	this.linkedinUrl = '';
 }
-const adilet = new Student('Adilet', 'Atambaev', 'adilet@gmail.com');
-const aida = new Student('Aida', 'Aitenova', 'aida@gmail.com');
-console.log(adilet);
-console.log(aida);
+const student = new Student('adilet', '', '');
+const anotherStudent = new Student('aida', '', '');
 const APIUrl =
 	'https://crudcrud.com/api/8b18c355a7894f45b6e87b7b234c31c4/students';
 // Get all students.
@@ -41,7 +39,6 @@ const getStudents = async () => {
 	console.log(students);
 	// I want to loop my students and create a table to display here. HOMEWORK.
 };
-getStudents();
 
 // create student.
 const createStudentForm = document.getElementById('create-user');
@@ -55,13 +52,11 @@ createStudentForm.addEventListener('submit', async (event) => {
 			// input that has name and value.
 			inputValues[element.name] = element.value;
 		});
-	console.log(inputValues);
 	const student = new Student(
 		inputValues.name,
 		inputValues.lastName,
 		inputValues.email
 	);
-
 	const options = {
 		method: 'POST',
 		headers: {
@@ -71,5 +66,4 @@ createStudentForm.addEventListener('submit', async (event) => {
 	};
 	const postPromise = fetch(APIUrl, options);
 	const result = await postPromise.then((res) => res.json());
-	console.log(result);
 });
