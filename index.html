@@ -13,16 +13,36 @@
 		<p>U: Update</p>
 		<p>D: Delete</p>
 		<h2>User dashboard</h2>
-		<button onclick="getStudents()">Get Students Data</button>
+		<button type="button" onclick="getStudents()">
+			Get Students Data
+		</button>
+		<div id="student-list">
+			<table border="1"  style="margin: 15px;">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Name</th>
+						<th>Last name</th>
+						<th>Email</th>
+						<th colspan="2">Actions</th>
+					</tr>
+				</thead>
+
+				<tbody id="students-data"></tbody>
+			</table>
+		</div>
 		<div>Create User</div>
-		<form action="post" id="create-user">
+		<form id="create-user">
 			<input type="text" name="name" placeholder="name" />
 			<input type="text" name="lastName" placeholder="lastName" />
 			<input type="email" name="email" placeholder="email" />
 			<input type="submit" value="Create" />
 		</form>
 		<div id="students-list"></div>
+		<div>Update User</div>
+		<form id="update-user"></form>
 		<h2>Teacher Dashboad</h2>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A earum quam aliquam distinctio laborum, molestias itaque temporibus dolor magnam ea sunt rem neque vel, perferendis tempore consequatur unde dolorem vero dolorum placeat. Numquam sed doloremque mollitia. Placeat laudantium ad ratione sapiente illo animi suscipit iste in, tenetur quae! Hic, molestias!</p>
 	</body>
 	<script src="index.js"></script>
 </html>
