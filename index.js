@@ -30,7 +30,7 @@ function Student(name, lastName, email) {
 const student = new Student('adilet', '', '');
 const anotherStudent = new Student('aida', '', '');
 const APIUrl =
-	'https://crudcrud.com/api/8b18c355a7894f45b6e87b7b234c31c4/students';
+	'https://crudcrud.com/api/9567f40367204cd8b2e46f7dee3a6137/students';
 // Get all students.
 const getStudents = async () => {
 	const studentsListDiv = document.getElementById('students-list');
