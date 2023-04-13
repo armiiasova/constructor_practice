@@ -13,14 +13,34 @@
 		<p>U: Update</p>
 		<p>D: Delete</p>
 		<h2>User dashboard</h2>
+		<button type="button" onclick="getStudents()">
+			Get Students Data
+		</button>
+		<div id="student-list">
+			<table border="1"  style="margin: 15px;">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Name</th>
+						<th>Last name</th>
+						<th>Email</th>
+						<th colspan="2">Actions</th>
+					</tr>
+				</thead>
+				
+				<tbody id="students-data"></tbody>
+			</table>
+		</div>
 		<div>Create User</div>
-		<form action="post" id="create-user">
+		<form id="create-user">
 			<input type="text" name="name" placeholder="name" />
 			<input type="text" name="lastName" placeholder="lastName" />
 			<input type="email" name="email" placeholder="email" />
 			<input type="submit" value="Create" />
 		</form>
 		<div id="students-list"></div>
+		<div>Update User</div>
+		<form id="update-user"></form>
 		<h2>Teacher Dashboad</h2>
 	</body>
 	<script src="index.js"></script>
