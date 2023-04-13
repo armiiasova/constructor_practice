@@ -1,6 +1,7 @@
 console.log('is connected, good to go');
-const APIUrl =
-	'https://crudcrud.com/api/39217771911e49d1aa4acf1da60dabb7/students';
+// const myApiUrl =
+// 	'https://crudcrud.com/api/39217771911e49d1aa4acf1da60dabb7/students';
+const myApiUrl = 'placeYourUrlFromCrudCrud.com';
 // constructor functions
 
 function Student(name, lastName, email, id) {
@@ -26,7 +27,7 @@ function Student(name, lastName, email, id) {
 				'Content-Type': 'application/json; charset=utf-8',
 			},
 		};
-		const postPromise = fetch(`${APIUrl}/${this.id}`, options);
+		const postPromise = fetch(`${myApiUrl}/${this.id}`, options);
 		const result = await postPromise.then((res) => res.json());
 		console.log(result);
 	};
@@ -38,7 +39,7 @@ function Student(name, lastName, email, id) {
 			},
 			body: JSON.stringify(this),
 		};
-		const postPromise = fetch(APIUrl, options);
+		const postPromise = fetch(myApiUrl, options);
 		const result = await postPromise.then((res) => res.json());
 		return result;
 	};
@@ -48,7 +49,7 @@ function Student(name, lastName, email, id) {
 const getStudents = async () => {
 	const studentsDataRow = document.getElementById('students-data');
 	studentsDataRow.innerHTML = '';
-	const promise = fetch(APIUrl);
+	const promise = fetch(myApiUrl);
 	const students = await promise.then((res) => res.json());
 
 	students.forEach((student) => {
